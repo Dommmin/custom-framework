@@ -1,0 +1,21 @@
+{% extends 'layouts/app.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 class="text-red-500 text-3xl">Home</h1>
+
+    {% if message is defined %}
+        <p>{{ message[0] }}</p>
+    {% endif %}
+
+    {% if users is not empty %}
+        <ul>
+            {% for user in users %}
+                <li><a href="/users/{{ user.id }}">{{ user.first_name }}</a></li>
+            {% endfor %}
+        </ul>
+        
+        {{ users.links() | raw }}
+    {% endif %}
+{% endblock %}

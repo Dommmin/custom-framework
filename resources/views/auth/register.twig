@@ -1,0 +1,39 @@
+{% extends 'layouts/app.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h1>Register</h1>
+
+    <form action="/register" method="post">
+        {{ csrf() | raw }}
+        <div>
+            <label for="first_name">First name</label>
+            <input type="text" name="first_name" id="first_name" placeholder="Name" value="{{ old('first_name') }}">
+            {% if errors.first_name %}
+                <div>
+                    <small style="color: red">{{ errors.first_name }}</small>
+                </div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" value="{{ old('email') }}">
+            {% if errors.email %}
+                <div>
+                    <small style="color: red">{{ errors.email }}</small>
+                </div>
+            {% endif %}
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" autocomplete="new-password">
+            {% if errors.password %}
+                <div>
+                    <small style="color: red">{{ errors.password }}</small>
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit">Register</button>
+    </form>
+{% endblock %}

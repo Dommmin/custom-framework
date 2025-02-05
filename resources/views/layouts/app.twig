@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if block('title') is defined %} {{ block('title') }} | {% endif %}  {{ config().get('app.name') }}</title>
+    {{ vite()|raw }}
+</head>
+<body>
+{% if session().getFlashBag().get('message') is defined %}
+    <p>{{ session().getFlashBag().get('message')[0] }}</p>
+{% endif %}
+<nav>
+    {% include 'layouts/partials/navigation.twig' %}
+</nav>
+<main>
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

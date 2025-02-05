@@ -1,0 +1,51 @@
+{
+    "name": "dominik/framework",
+    "type": "project",
+    "description": "This is my Framework",
+    "package": {
+        "name": "dominik/framework",
+        "version": "1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Dominik",
+            "email": "domijas96@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "adbario/php-dot-notation": "^3.3",
+        "cartalyst/sentinel": "^8.0",
+        "illuminate/database": "^11.41",
+        "illuminate/events": "^11.41",
+        "illuminate/pagination": "^11.41",
+        "laminas/laminas-diactoros": "^3.5",
+        "laminas/laminas-httphandlerrunner": "^2.11",
+        "league/container": "^4.2",
+        "league/route": "^6.2",
+        "respect/validation": "^2.4",
+        "slim/csrf": "^1.5",
+        "spatie/ignition": "^1.15",
+        "symfony/http-foundation": "^7.2",
+        "twig/twig": "^3.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
